@@ -1,0 +1,28 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading"></div>
+    <div class="panel-body">
+
+        <div ng-hide="editing">
+            <div>
+                {{customer.fullName}}
+            </div>
+            <div>
+                {{customer.email}}
+            </div>
+            <button ng-click="editing = true">Edit</button>
+        </div>
+        <div ng-show="editing" >
+            <form ng-submit="editing = false">
+                <label>Name:</label>
+                <input type="text" ng-model="customer.fullName" placeholder="Full Name" ng-required />
+                <label>Email:</label>
+                <input type="text" ng-model="customer.email" placeholder="Email" ng-required />
+                <br />
+            
+                <button class="btn" type="submit" ng-click="updateCustomer(customer)">Save</button>
+            </form>
+        </div>
+        <a href="/#Home">Back</a>
+    </div>
+</div>
+        
